@@ -27,8 +27,8 @@ page = 1
 while True:
 
     # 랭크 변수 선언(0 ~ 49)
-    i = 0
-    time.sleep(1)
+    j = 0
+    #time.sleep(1)
 
     while True:
         #네이버 영화 랭킹 평점순 이동
@@ -38,14 +38,15 @@ while True:
         try:
             #영화 랭킹 클릭
             ranks = browser.find_elements_by_css_selector('#old_content > table > tbody > tr > td.title > div > a')
-            ranks[i].click()
+            ranks[j].click()
             browser.implicitly_wait(3)
         except:
             break
 
         #영화 평점 탭 클릭
-        review_tab = browser.find_element_by_css_selector('#movieEndTabMenu > li:nth-child(5) > a')
-        review_tab.click()
+        #review_tab = browser.find_element_by_css_selector('#movieEndTabMenu > li:nth-child(5) > a')
+        review_tab = browser.find_element_by_class_name('tab05').click()
+        #review_tab.click()
         browser.implicitly_wait(3)
 
         #영화제목 수집
@@ -66,10 +67,10 @@ while True:
         browser.implicitly_wait(3)
 
         #MongoDB 접속, DB선택, Collection선택
-        conn = mongo('mongodb://rhj:1234@192.168.100.101:27017')
-        #conn = mongo('mongodb://rhj:1234@192.168.50.82:27017/rhj')
+        #conn = mongo('mongodb://rhj:1234@192.168.100.101:27017')
+        conn = mongo('mongodb://rhj:1234@192.168.50.82:27017/rhj')
         db = conn.get_database('rhj')
-        collection = db.get_collection('movie_score4')
+        collection = db.get_collection('movie_test3')
 
         #현재 페이지 설정
         page_num = 1
@@ -107,7 +108,7 @@ while True:
             page_num += 1
 
         # 그 다음 영화 리뷰 수집을 위한 랭크 변수 증가
-        i += 1
+        j += 1
 
     page += 1
 
