@@ -106,7 +106,7 @@ while True:
             #Insert 실행
             collection.insert_many(list_data)
             """
-            print(list_data)
+            #print(list_data)
 
             print(page_num, '페이지 insert 완료.')
             page_num += 1
