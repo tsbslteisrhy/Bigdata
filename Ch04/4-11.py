@@ -14,6 +14,7 @@ df_pima = pd.read_csv('./data/pima-indians-diabetes.csv')
 #학습데이터 준비
 pima_data = df_pima.iloc[:, 0:8]
 pima_label = df_pima.iloc[:, 8]
+
 train_data, test_data, train_label, test_label = train_test_split(pima_data, pima_label)
 
 #학습하기

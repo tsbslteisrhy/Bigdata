@@ -9,9 +9,8 @@ from sklearn import svm, metrics
 #데이터프레임 생성
 df_mnist_train = pd.read_csv('./data/mnist_train.csv')
 df_mnist_test = pd.read_csv('./data/mnist_test.csv')
-df_mnist_test
 
-#학습데이터 준비 및 초기화
+#학습데이터 준비 및 초기화 (픽셀데이터를 0 ~ 1 사이 실수로 초기화)
 df_mnist_train_data = df_mnist_train.iloc[:, 1:]/255
 df_mnist_train_label = df_mnist_train.iloc[:, 0]
 

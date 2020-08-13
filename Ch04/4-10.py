@@ -17,7 +17,7 @@ model = tree.DecisionTreeClassifier()
 model.fit(train_data, train_label)
 
 #검증하기
-test_data = [[181, 62], [171, 62], [162, 52], [160, 64], [169, 59]]
+test_data = [[181, 62], [171, 62], [164, 52], [160, 64], [169, 59]]
 result = model.predict(test_data)
 print(result)
 
