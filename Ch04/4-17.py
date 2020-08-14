@@ -14,7 +14,7 @@ df_iris = pd.read_csv('./data/iris.csv')
 #print(df_iris)
 
 #붓꽃 상관분석 차트 출력
-sns.pairplot(df_iris, hue='variety')
+#sns.pairplot(df_iris, hue='variety')
 #plt.show()
 
 #학습데이터 준비

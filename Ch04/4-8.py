@@ -18,7 +18,7 @@ sns.pairplot(df_iris, hue='variety')
 #plt.show()
 
 #학습데이터 준비
-iris_data = df_iris[['sepal.length'], ['sepal.width'], ['petal.length'], ['petal.width']]
+iris_data = df_iris[['sepal.length', 'sepal.width', 'petal.length', 'petal.width']]
 iris_label = df_iris['variety']
 
 train_data, test_data, train_label, test_label = train_test_split(iris_data, iris_label)
